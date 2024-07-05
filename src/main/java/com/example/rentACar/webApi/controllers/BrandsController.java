@@ -3,7 +3,7 @@ package com.example.rentACar.webApi.controllers;
 import com.example.rentACar.business.abstracts.BrandService;
 import com.example.rentACar.business.requests.CreateBrandRequest;
 import com.example.rentACar.business.requests.UpdateBrandRequest;
-import com.example.rentACar.business.responses.GetAllBrandsResponses;
+import com.example.rentACar.business.responses.GetAllBrandsResponse;
 
 import com.example.rentACar.business.responses.GetByIdBrandResponse;
 import jakarta.validation.Valid;
@@ -20,7 +20,7 @@ public class BrandsController {
     private BrandService brandService;
 
     @GetMapping()
-    public List<GetAllBrandsResponses> getALl(){
+    public List<GetAllBrandsResponse> getALl(){
        return  brandService.getALl();
     }
 

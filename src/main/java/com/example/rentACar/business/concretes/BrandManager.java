@@ -3,14 +3,13 @@ package com.example.rentACar.business.concretes;
 import com.example.rentACar.business.abstracts.BrandService;
 import com.example.rentACar.business.requests.CreateBrandRequest;
 import com.example.rentACar.business.requests.UpdateBrandRequest;
-import com.example.rentACar.business.responses.GetAllBrandsResponses;
+import com.example.rentACar.business.responses.GetAllBrandsResponse;
 import com.example.rentACar.business.responses.GetByIdBrandResponse;
 import com.example.rentACar.business.rules.BrandBusinessRules;
 import com.example.rentACar.core.utilities.mapper.ModelMapperService;
 import com.example.rentACar.dataAccess.abstracts.BrandRepository;
 import com.example.rentACar.entities.concretes.Brand;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -24,12 +23,12 @@ public class BrandManager implements BrandService {
     private BrandBusinessRules brandBusinessRules;
 
     @Override
-    public List<GetAllBrandsResponses> getALl() {
+    public List<GetAllBrandsResponse> getALl() {
         List<Brand> brands = brandRepository.findAll();
-        List<GetAllBrandsResponses> responses = brands
+        List<GetAllBrandsResponse> responses = brands
                 .stream()
                 .map(brand -> this.modelMapperService.forResponse()
-                        .map(brand, GetAllBrandsResponses.class))
+                        .map(brand, GetAllBrandsResponse.class))
                         .collect(Collectors.toList());
 
         return responses;

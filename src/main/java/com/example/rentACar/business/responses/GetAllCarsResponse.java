@@ -1,5 +1,6 @@
 package com.example.rentACar.business.responses;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,8 +8,12 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class GetAllBrandsResponses {
+public class GetAllCarsResponse {
     private int id;
-    private String name;
+    private String plate;
+    private double dailyPrice;
+    private int modelYear;
+    private int state;
+    private String modelName;
 
 }
